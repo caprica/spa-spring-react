@@ -33,7 +33,9 @@ Then open your browser at the following URLs to prove it's all configured proper
 http://localhost:8080
 http://localhost:8080/index.html
 http://localhost:8080/api/users
-http://localhost:8080/api/users/{username}
+http://localhost:8080/api/users/boss
+http://localhost:8080/api/users/emo
+http://localhost:8080/api/users/emma
 http://localhost:8080/api/version
 http://localhost:8080/api/anything-else-does-not-exist
 http://localhost:8080/assets/css/index.css
@@ -43,7 +45,19 @@ http://localhost:8080/imagine/this/is/client/routing
 http://localhost:8080/imagine/this/is/also/client/routing
 ```
 
+This project also has client-side routing enabled, these are deep links that will be routed to the client index
+page where the React router will take over: 
+
+```
+http://localhost:8080/users
+http://localhost:8080/users/boss
+http://localhost:8080/users/emo
+http://localhost:8080/users/emma
+http://localhost:8080/a/not/found/page
+```
+
 Everything else is just like any other ReactJS application.
+
 
 If you want to disable source maps, look in the package.json for the scripts section and make the following
 change:
