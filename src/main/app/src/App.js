@@ -51,6 +51,7 @@ const NotFound = () => (
 const App = () => (
     <Switch>
         <Route exact path='/'                component={Home}     />
+        <Route exact path='/index.html'      component={Home}     />
         <Route exact path='/users'           component={UsersPage}/>
         <Route       path='/users/:username' component={UserPage} />
         <Route                               component={NotFound} />
