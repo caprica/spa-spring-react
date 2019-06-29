@@ -21,6 +21,8 @@ Key features:
 
 The names for the path prefixes used are arbitrary and can be changed to whatever you prefer.
 
+There is no cache control for the static resources, you might like to consider that.
+
 You can run this project from a shell/terminal, simply type:
 
 ```
@@ -62,7 +64,6 @@ http://localhost:8080/a/not/found/page
 Full refreshes will work and be routed correctly.
 
 Everything else is just like any other ReactJS application.
-
 
 If you want to disable source maps, look in the package.json for the scripts section and make the following
 change:
