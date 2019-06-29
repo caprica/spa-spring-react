@@ -46,7 +46,8 @@ const useFetchData = ({url}) => {
                 })
             } catch (error) {
                 dispatch({
-                    type: 'ERROR', error
+                    type: 'ERROR',
+                    error
                 })
             }
         }
@@ -57,3 +58,5 @@ const useFetchData = ({url}) => {
 }
 
 export default useFetchData
+
+// Based on https://codebushi.com/react-hooks-higher-order-reducers/

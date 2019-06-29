@@ -1,16 +1,20 @@
-import React from 'react'
+import React        from 'react'
 
-import useFetchData from './hooks/useFetchData'
+import { Link }     from 'react-router-dom'
 
-const User = ({username}) => {
+import Page         from './Page'
+
+import useFetchData from '../hooks/useFetchData'
+
+const User = (props) => {
 
     // eslint-disable-next-line no-unused-vars
     const [state, dispatch] = useFetchData({
-        url: `/api/users/${username}`
+        url: `/api/users/${props.match.params.username}`
     });
 
     return (
-        <div>
+        <Page header={`User ${props.match.params.username}`}>
             <table>
                 <thead>
                     <tr>
@@ -25,8 +29,10 @@ const User = ({username}) => {
                     </tr>
                 </tbody>
             </table>
-            <p>{state.data.loading ? 'Fetching user... ' : ''}</p>
-        </div>
+            {state.data.loading && <p>Fetching user {props.match.params.username}...</p>}
+            <br/>
+            <span><Link className="App-link" to="/">Home</Link> | <Link className="App-link" to="/users">Users</Link></span>
+        </Page>
     )
 
 }

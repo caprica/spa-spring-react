@@ -1,8 +1,10 @@
-import React from 'react'
+import React        from 'react'
 
-import { Link } from 'react-router-dom'
+import { Link }     from 'react-router-dom'
 
-import useFetchData from './hooks/useFetchData'
+import Page         from './Page'
+
+import useFetchData from '../hooks/useFetchData'
 
 function Users() {
 
@@ -12,7 +14,7 @@ function Users() {
     });
 
     return (
-        <div>
+        <Page header="Users">
             <table>
                 <thead>
                     <tr>
@@ -31,8 +33,10 @@ function Users() {
                     }
                 </tbody>
             </table>
-            <p>{state.data.loading ? 'Fetching users...' : ''}</p>
-        </div>
+            {state.data.loading && <p>Fetching users...</p>}
+            <br/>
+            <span><Link className="App-link" to="/">Home</Link></span>
+        </Page>
     )
 
 }
