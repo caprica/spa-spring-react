@@ -56,6 +56,8 @@ http://localhost:8080/users/emma
 http://localhost:8080/a/not/found/page
 ```
 
+Full refreshes will work and be routed correctly.
+
 Everything else is just like any other ReactJS application.
 
 
