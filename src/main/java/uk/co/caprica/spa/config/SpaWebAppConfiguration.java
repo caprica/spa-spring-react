@@ -50,6 +50,8 @@ public class SpaWebAppConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        // It might still be handy to route to a static assets directory on the server (e.g. for images, or scripts or
+        // css that is not part of the single page application)
         registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
 
         // In the classpath locations referenced here, "app" is the output directory that is configured for the

@@ -45,6 +45,9 @@ http://localhost:8080/imagine/this/is/client/routing
 http://localhost:8080/imagine/this/is/also/client/routing
 ```
 
+It can still be useful to route to static assets on the server - e.g. images or scripts that not part of the client
+application itself.
+
 This project also has client-side routing enabled, these are deep links that will be routed to the client index
 page where the React router will take over: 
 
