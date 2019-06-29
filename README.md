@@ -1,2 +1,78 @@
 # spa-spring-react
-Basic SpringMVC web application configured for a ReactJS single page client application
+A Basic SpringMVC web application configured for a ReactJS single page client application.
+
+Why is this so hard? Seriously?!
+
+The end result is really simple but getting to this point is really not. Don't believe me? Well you're here
+aren't you. Just try and work it all out yourself before looking at this code, you'll understand the misery.
+
+Anyway, here it is, a skeleton project for a single page web application using SpringMVC for the middle tier.
+
+Key features:
+
+ * The web application is mapped to the root "/" context
+ * All static resources are under the "/assets/" path
+ * A request for "index.html" will redirect to "/" for a nicer URL in the address bar
+ * All web-service API are under an "/api/" path
+ * A request for an unknown API will have a catch-all that maps to a BAD_REQUEST response
+ * Any other request, including deep-link requests, will map to the single page web application for client
+   routing
+ * Works with @EnableWebMvc, if you don't use this annotation you will need to set up some other things manually.
+
+The names for the path prefixes used are arbitrary and can be changed to whatever you prefer.
+
+You can run this project from a shell/terminal, simply type:
+
+```
+mvn jetty:run
+```
+
+Then open your browser at the following URLs to prove it's all configured properly:
+
+```
+http://localhost:8080
+http://localhost:8080/index.html
+http://localhost:8080/api/users
+http://localhost:8080/api/users/{username}
+http://localhost:8080/api/version
+http://localhost:8080/api/anything-else-does-not-exist
+http://localhost:8080/assets/css/index.css
+http://localhost:8080/assets/img/star.png
+http://localhost:8080/assets/js/app.js
+http://localhost:8080/imagine/this/is/client/routing
+http://localhost:8080/imagine/this/is/also/client/routing
+```
+
+Everything else is just like any other ReactJS application.
+
+If you want to disable source maps, look in the package.json for the scripts section and make the following
+change:
+
+```
+package.json
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+```
+
+Proxying API requests also works just the same as before, add the following to your package.json (this has
+already been applied in this project):
+
+```
+"proxy": "http://localhost:8080"
+``` 
+
+You may need to adjust the port number, in this case 8080 is the port number used by the Jetty container launched
+by the aforementioned maven command.
+
+And then as usual to run the development version of the application:
+
+```
+cd src/main/app
+yarn start
+```
+ 
+You're welcome.
