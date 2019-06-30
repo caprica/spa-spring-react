@@ -6,6 +6,8 @@ Why is this so hard? Seriously?!
 The end result is really simple but getting to this point is really not. Don't believe me? Well you're here
 aren't you. Just try and work it all out yourself before looking at this code, you'll understand the misery.
 
+This project uses ReactJS, using AnguluarJS or any other client framework should be very similar.
+
 Anyway, here it is, a skeleton project for a single page web application using SpringMVC for the middle tier.
 
 Key features:
@@ -43,14 +45,12 @@ http://localhost:8080/api/anything-else-does-not-exist
 http://localhost:8080/assets/css/index.css
 http://localhost:8080/assets/img/star.png
 http://localhost:8080/assets/js/app.js
-http://localhost:8080/imagine/this/is/client/routing
-http://localhost:8080/imagine/this/is/also/client/routing
 ```
 
 It can still be useful to route to static assets on the server - e.g. images or scripts that not part of the client
 application itself.
 
-This project also has client-side routing enabled, these are deep links that will be routed to the client index
+This project also has client-side routing enabled. These are deep links that will be routed to the client index
 page where the React router will take over: 
 
 ```
@@ -88,7 +88,7 @@ already been applied in this project):
 You may need to adjust the port number, in this case 8080 is the port number used by the Jetty container launched
 by the aforementioned maven command.
 
-And then as usual to run the development version of the application:
+And then as usual to run the development version of the application (use port 3000 rather than 8080):
 
 ```
 cd src/main/app
