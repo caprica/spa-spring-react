@@ -32,6 +32,7 @@ import uk.co.caprica.spa.service.UserService;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * An example web service API controller.
@@ -49,8 +50,9 @@ public class UserController {
 
     @RequestMapping(value = "/api/users/{username}", method = RequestMethod.GET)
     public ResponseEntity<User> user(@PathVariable("username") String username) {
-        Optional<User> user = userService.user(username);
-        return user.isPresent() ? new ResponseEntity<>(user.get(), HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return userService.user(username)
+            .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
 }
