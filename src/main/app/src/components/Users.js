@@ -33,7 +33,7 @@ function Users() {
                     }
                 </tbody>
             </table>
-            {state.data.loading && <p>Fetching users...</p>}
+            {state.loading && <p>Fetching users...</p>}
             <br/>
             <span><Link className="App-link" to="/">Home</Link></span>
         </Page>

@@ -11,7 +11,7 @@ const dataReducer = (state, action) => {
         case 'LOADING':
             return {
                 ...state,
-                 loading: action.loading
+                 loading: true
             }
         case 'ERROR':
             return {
@@ -38,6 +38,9 @@ const useFetchData = ({url}) => {
     useEffect(() => {
         const getInitialData = async () => {
             try {
+                dispatch({
+                    type: 'LOADING'
+                })
                 const response = await fetch(url)
                 switch (response.status) {
                     case 200:
@@ -66,5 +69,3 @@ const useFetchData = ({url}) => {
 }
 
 export default useFetchData
-
-// Based on https://codebushi.com/react-hooks-higher-order-reducers/
