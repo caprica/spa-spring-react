@@ -19,6 +19,7 @@ Key features:
  * A request for an unknown API will have a catch-all that maps to a BAD_REQUEST response
  * Any other request, including deep-link requests, will map to the single page web application for client
    routing
+ * Does NOT rely on ugly hashes '#' in URLs or the address bar 
  * Works with @EnableWebMvc, if you don't use this annotation you will need to set up some other things manually.
 
 The names for the path prefixes used are arbitrary and can be changed to whatever you prefer.
