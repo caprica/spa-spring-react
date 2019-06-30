@@ -39,11 +39,19 @@ const useFetchData = ({url}) => {
         const getInitialData = async () => {
             try {
                 const response = await fetch(url)
-                const data = await response.json()
-                dispatch({
-                    type: 'SET_DATA',
-                    data
-                })
+                switch (response.status) {
+                    case 200:
+                        const data = await response.json()
+                        dispatch({
+                            type: 'SET_DATA',
+                            data
+                        })
+                        break;
+                    case 404:
+                        throw new Error("Not found")
+                    default:
+                        throw new Error(`Unexpected response ${response.status}`)
+                }
             } catch (error) {
                 dispatch({
                     type: 'ERROR',
