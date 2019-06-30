@@ -79,8 +79,11 @@ public class SpaWebAppConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        // Redirect index.html to  the root, we simply do not want index.html in the address bar
-        registry.addRedirectViewController("index.html", "/");
+        // We do not have a redirect here from "index.html" to "/" for two reasons:
+        //  1. the resource handlers now by design have higher priority than the view controllers, so the "/index.html"
+        //     mapping in the resource handlers will override any "/index.html" mapping here
+        //  2. it does not matter anyway because we can have the client application router simply redirect "/index.html"
+        //     to the application root to keep the address bar clean
 
         // A catch-all for the web-service API routes to respond with the BAD_REQUEST status code
         registry.addStatusController("/api/**", HttpStatus.BAD_REQUEST);
