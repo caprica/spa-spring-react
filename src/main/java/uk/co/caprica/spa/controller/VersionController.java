@@ -20,20 +20,18 @@
 
 package uk.co.caprica.spa.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * An example web service API controller.
  */
-@Controller
+@RestController
 public class VersionController {
 
-    @GetMapping(value = "/api/version", produces = "application/json")
-    @ResponseBody
+    @GetMapping(value = "/api/version")
     public String version() {
-        return "{version: '1.0.0}";
+        return "{\"version\": \"1.0.0\"}";
     }
 
 }
