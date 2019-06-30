@@ -30,6 +30,7 @@ const User = (props) => {
                 </tbody>
             </table>
             {state.data.loading && <p>Fetching user {props.match.params.username}...</p>}
+            {state.error && <p>Error fetching user {props.match.params.username}: {state.error.message}</p>}
             <br/>
             <span><Link className="App-link" to="/">Home</Link> | <Link className="App-link" to="/users">Users</Link></span>
         </Page>
