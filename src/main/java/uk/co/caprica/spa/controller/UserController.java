@@ -45,11 +45,23 @@ public class UserController {
 
     @RequestMapping(value = "/api/users", method = RequestMethod.GET)
     public List<User> users() {
+        // Add a fake delay so we can see state changes in the UI
+        try {
+            Thread.sleep(1000);
+        }
+        catch (InterruptedException e) {
+        }
         return userService.users();
     }
 
     @RequestMapping(value = "/api/users/{username}", method = RequestMethod.GET)
     public ResponseEntity<User> user(@PathVariable("username") String username) {
+        // Add a fake delay so we can see state changes in the UI
+        try {
+            Thread.sleep(1000);
+        }
+        catch (InterruptedException e) {
+        }
         return userService.user(username)
             .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
