@@ -6,7 +6,9 @@ Why is this so hard? Seriously?!
 The end result is really simple but getting to this point is really not. Don't believe me? Well you're here
 aren't you. Just try and work it all out yourself before looking at this code, you'll understand the misery.
 
-This project uses ReactJS, using AnguluarJS or any other client framework should be very similar.
+This project uses ReactJS, using AngularJS or any other client framework should be very similar.
+
+If you're looking for an equivalent AngularJS version, check out [spa-spring-angular](https://github.com/caprica/spa-spring-angular).
 
 Anyway, here it is, a skeleton project for a single page web application using SpringMVC for the middle tier.
 
