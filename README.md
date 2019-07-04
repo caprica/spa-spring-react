@@ -70,7 +70,6 @@ If you want to disable source maps, look in the package.json for the scripts sec
 change:
 
 ```
-package.json
   "scripts": {
     "start": "react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
