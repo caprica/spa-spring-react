@@ -34,6 +34,7 @@ function Users() {
                 </tbody>
             </table>
             {state.loading && <p>Fetching users...</p>}
+            {state.error && <p>Error fetching users: {state.error.message}</p>}
             <br/>
             <span><Link className="App-link" to="/">Home</Link></span>
         </Page>
