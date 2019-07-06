@@ -2,10 +2,10 @@ import React             from 'react'
 
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-import Home              from './components/Home'
-import NotFound          from './components/NotFound'
-import User              from './components/User'
-import Users             from './components/Users'
+import Home              from './components/home'
+import NotFound          from './components/not-found'
+import User              from './components/user'
+import Users             from './components/users'
 
 import './App.css'
 

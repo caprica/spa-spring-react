@@ -2,9 +2,9 @@ import React        from 'react'
 
 import { Link }     from 'react-router-dom'
 
-import Page         from './Page'
+import Page         from '../Page'
 
-import useFetchData from '../hooks/useFetchData'
+import useFetchData from '../../hooks/useFetchData'
 
 const User = (props) => {
 

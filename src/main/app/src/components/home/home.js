@@ -2,7 +2,7 @@ import React    from 'react'
 
 import { Link } from 'react-router-dom'
 
-import Page     from './Page'
+import Page     from '../Page'
 
 const Home = () =>
     <Page header="Home">
