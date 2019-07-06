@@ -23,14 +23,14 @@ function Users() {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        state.data.map((user, key) =>
-                            <tr key={user.username}>
-                                <td><Link className="App-link" to={`/users/${user.username}`}>{user.username}</Link></td>
-                                <td>{user.name}</td>
-                            </tr>
-                        )
-                    }
+                {
+                    state.data.map((user, key) =>
+                        <tr key={user.username}>
+                            <td><Link className="App-link" to={`/users/${user.username}`}>{user.username}</Link></td>
+                            <td>{user.name}</td>
+                        </tr>
+                    )
+                }
                 </tbody>
             </table>
             {state.loading && <p>Fetching users...</p>}
