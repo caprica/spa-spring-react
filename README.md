@@ -34,6 +34,12 @@ You can run this project from a shell/terminal, simply type:
 mvn jetty:run
 ```
 
+To change the port number used by Jetty:
+
+```
+mvn jetty:run -Djetty.port=9090
+```
+
 Then open your browser at the following URLs to prove it's all configured properly:
 
 ```
