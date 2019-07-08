@@ -23,7 +23,7 @@ Key features:
  * A request for an unknown API will have a catch-all that maps to a BAD_REQUEST response
  * Any other request, including deep-link requests, will map to the single page web application for client
    routing
- * Does NOT rely on ugly hashes '#' in URLs or the address bar 
+ * Does NOT rely on ugly hashes '#' in URLs or the address bar
  * Works with @EnableWebMvc, if you don't use this annotation you will need to set up some other things manually.
 
 The names for the path prefixes used are arbitrary and can be changed to whatever you prefer.
@@ -93,7 +93,7 @@ already been applied in this project):
 
 ```
 "proxy": "http://localhost:8080"
-``` 
+```
 
 You may need to adjust the port number, in this case 8080 is the port number used by the Jetty container launched
 by the aforementioned maven command.
@@ -104,5 +104,5 @@ And then as usual to run the development version of the application (use port 30
 cd src/main/app
 yarn start
 ```
- 
+
 You're welcome.
